@@ -23,5 +23,5 @@ runs:
     - name: "Running handler.py"
       shell: bash
       run: |
-        python handler/handler.py --SECRETS_CONTEXT ${{ fromJson(inputs.SECRETS_CONTEXT) }}
+        python handler/handler.py --SECRETS_CONTEXT ${{ inputs.SECRETS_CONTEXT }}
         
