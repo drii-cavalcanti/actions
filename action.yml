@@ -16,7 +16,6 @@ runs:
         python-version: "3.10"
     - name: Install dependencies
       run: |
-        echo  ${{ secrets.MY_SECRET_3 }}
         echo '${{ inputs.SECRETS_CONTEXT }}'
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
