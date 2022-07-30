@@ -3,8 +3,8 @@ description: Runs handler.py to parse variables and API calls
 
 inputs:
   SECRETS_CONTEXT:
-  description: "Variables to be parsed"
-  required: false
+    description: "Variables to be parsed"
+    required: true
 
 runs:
   using: composite
