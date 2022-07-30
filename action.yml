@@ -23,5 +23,7 @@ runs:
     - name: "Running handler.py"
       shell: bash
       run: |
-        python handler.handler.py --SECRETS_CONTEXT {{ $inputs.SECRETS_CONTEXT }}
+        ls
+        pwd
+        python handler.py --SECRETS_CONTEXT {{ $inputs.SECRETS_CONTEXT }}
         
