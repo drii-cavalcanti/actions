@@ -23,6 +23,5 @@ runs:
     - name: "Running handler.py"
       shell: bash
       run: |
-        export inputs.SECRETS_CONTEXT
         python handler/handler.py inputs.SECRETS_CONTEXT
         
