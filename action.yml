@@ -25,5 +25,5 @@ runs:
       run: |
         ls
         pwd
-        python handler.py --SECRETS_CONTEXT {{ $inputs.SECRETS_CONTEXT }}
+        python handler/handler.py --SECRETS_CONTEXT {{ $inputs.SECRETS_CONTEXT }}
         
