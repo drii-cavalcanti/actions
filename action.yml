@@ -16,8 +16,10 @@ runs:
         python-version: "3.10"
     - name: Install dependencies
       run: |
+        echo {{ $inputs.SECRETS_CONTEXT }}
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      shell: bash
     - name: "Running handler.py"
       shell: bash
       run: |
