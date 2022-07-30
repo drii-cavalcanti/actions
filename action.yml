@@ -23,7 +23,7 @@ runs:
     - name: "Running handler.py"
       shell: bash
       run: |
-        sed 's/\:/\=/g' ${{ inputs.SECRETS_CONTEXT }} >> GITHUB_ENV
+        echo "$(echo ${{ fromJson(inputs.SECRETS_CONTEXT) }} | sed -i 's/\:/\=/g' f)"
         echo "$GITHUB_CONTEXT"
         python handler/handler.py 
         
