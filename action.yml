@@ -23,8 +23,12 @@ runs:
     - name: "Running handler.py"
       shell: bash
       run: |
-        echo "$GITHUB_CONTEXT"
-        export GIT_VARS="[${{ inputs.SECRETS_CONTEXT }}]"
+        for i in '${{ inputs.SECRETS_CONTEXT }}' ; do 
+          KEY=${i%,*};
+          VAL=${i#*,};
+          echo $KEY" XX "$VAL;
+        done
+        export GIT_VARS='${{ inputs.SECRETS_CONTEXT }}'
         echo "$GITHUB_CONTEXT"
         python handler/handler.py 
         
