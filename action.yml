@@ -23,7 +23,8 @@ runs:
     - name: "Running handler.py"
       shell: bash
       run: |
-        echo "$( echo "${{ inputs.SECRETS_CONTEXT }}" | sed -i 's/\{/\g')"
+        echo "$GITHUB_CONTEXT"
+        export GIT_VARS="${{ inputs.SECRETS_CONTEXT }}"
         echo "$GITHUB_CONTEXT"
         python handler/handler.py 
         
